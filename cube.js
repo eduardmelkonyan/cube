@@ -1,14 +1,19 @@
-const str = 'Հենց հիմա հարձակվել!';
+// Imagine a war situation. Comrade-in-arms should explain other actions to their friends. 
+// They must send encrypted text so that the enemy does not understand․
+const str = 'Attack right now!';
 let newArray = str.split('');
 const cub = Math.ceil(str.length/8);
 const array = [];
 
-function foo(arr) {
+// This function creates the appropriate number of cubes and placing each symbol in the corners of the cube
+function devideIntoCubes(arr) {
    while(arr.length) {
         array.push(arr.splice(0,8));
     }
     return array;
 }
+
+// Then we call these functions up, down, to the right, to the left to turn the corresponding cube.
 
 function up(array, i) {
     let tmp = array[i][0]
@@ -74,8 +79,8 @@ function down(array, i) {
     return array;
 }
 
-foo(newArray);
-up(array,0);
-right(array,1);
-left(array,2);
+devideIntoCubes(newArray);
+down(array,0);
+left(array,1);
+right(array,2);
 console.log(array);
